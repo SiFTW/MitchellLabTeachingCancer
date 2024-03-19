@@ -10,7 +10,6 @@ function runSimulation(first_cell, last_cell, conditions,folder,BCRSSArray,BCRTC
     BCRIndex=findfirst(x -> x=="k3_signal-BCR", parameterNameList)
     TLRIndex=findfirst(x -> x=="k2_LPSmod-TLR", parameterNameList)
     NIKIndex=findfirst(x -> x=="nik_deg_mod-NFkB", parameterNameList)
-    thisDist=TruncatedNormal(1.0, preCV,0,Inf)
 
     
 
@@ -20,12 +19,6 @@ function runSimulation(first_cell, last_cell, conditions,folder,BCRSSArray,BCRTC
     for cellIndex in first_cell:last_cell
         thisCellsParamVals=copy(originalParams)            
 
-        for j in 1:size(parametersDF,1)
-            if parametersDF[j,3]==1
-                x = rand(thisDist, 1)
-               thisCellsParamVals[j]=thisCellsParamVals[j].*x[1]
-            end
-        end
         #println(thisCellsParamVals)
         allParams[:,cellIndex]=thisCellsParamVals
     end
@@ -38,7 +31,6 @@ function runSimulation(first_cell, last_cell, conditions,folder,BCRSSArray,BCRTC
     #println(allParams[1])
     allParamsOriginal=copy(allParams)
     for condIndex in 1:length(conditions)
-        Random.seed!(123)    
         allParams=copy(allParamsOriginal)
         thisCondition = conditions[condIndex]
         #TODO: consider making a condition scaling factor array here and just multiplying all prameters by it every time.

@@ -1,5 +1,6 @@
 function plotAllSpecies(speciesToPlot,conditionsToPlot,colorArray,first_cell,last_cell,folder,hoursToPlot,maxValOfYAxis,qualityScaling,preStimTime)
     allConditionsArray=[]
+    p1=plot();
     for species in speciesToPlot
         #thisPlot=plot(title=species)
 #         thisPlotStd=plot(title=species*" avg\n")
@@ -65,8 +66,8 @@ function plotAllSpecies(speciesToPlot,conditionsToPlot,colorArray,first_cell,las
             #CSV.write("outputs/allTCs_"*species*"_cell.csv",df);
 
             
-            meanOfCondition=mean(conditionArray, dims=1)
-            stdOfCondition=std(conditionArray, dims=1)
+            meanOfCondition=conditionArray
+            stdOfCondition=zeros(size(conditionArray))
             largestValForGraph=maximum(meanOfCondition)+maximum(stdOfCondition)
             if largestValForGraph>maxValueOfAllConditions
                 maxValueOfAllConditions=largestValForGraph
@@ -99,7 +100,7 @@ function plotAllSpecies(speciesToPlot,conditionsToPlot,colorArray,first_cell,las
             plot!(boxPlotAll,ylim=(0,maximum(meansOfAllConditions)+maximum(stdOfAllConditions)+0.1))
         end
         #display(plot(boxPlotAll,thisPlot))
-        display(plot(boxPlotAll,thisPlotStd,layout = grid(1, 2, widths=[0.20 ,0.6])))
+        p1=plot(boxPlotAll,thisPlotStd,layout = grid(1, 2, widths=[0.20 ,0.6]),title=species)
+        display(p1)
     end
-    return allConditionsArray
 end
