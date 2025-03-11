@@ -1,0 +1,5 @@
+Name,Definition
+Constant Exp,{k1}
+Mass Action with substrate,[S1] * {k1}
+Expression With Modifier,{k1} * [mod1]/({k2} + [mod1])
+Hill Equation With Modifier,{k1} * ([mod1]^{n}) / ({k2} + [mod1]^{n})

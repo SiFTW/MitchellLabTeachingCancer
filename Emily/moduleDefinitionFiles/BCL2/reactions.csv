@@ -1,0 +1,16 @@
+Substrate,Products,Kinetic Law,Modifiers,Parameters
+,Mcl1,Constant Exp,,k1_Mcl1exp
+,Bcl2,Constant Exp,,k1_Bcl2exp
+,BclxL,Constant Exp,,k1_BclxLexp
+,Mcl1,Expression With Modifier,RelAnp50n,k1_Mcl1RelAnp50n k2_kdMcl1RelAnp50n n_Mcl1
+,Mcl1,Expression With Modifier,cRelnp50n,k1_Mcl1cRelnp50n k2_kdMcl1cRelnp50n n_Mcl1
+,Mcl1,Expression With Modifier,RelBnp52n,k1_Mcl1RelBnp52n k2_kdMcl1RelBnp52n n_Mcl1
+,Bcl2,Expression With Modifier,RelAnp50n,k1_Bcl2RelAnp50n k2_kdBcl2RelAnp50n n_Bcl2
+,Bcl2,Expression With Modifier,cRelnp50n,k1_Bcl2cRelnp50n k2_kdBcl2cRelnp50n n_Bcl2
+,Bcl2,Expression With Modifier,RelBnp52n,k1_Bcl2RelBnp52n k2_kdBcl2RelBnp52n n_Bcl2
+,BclxL,Expression With Modifier,RelAnp50n,k1_BclxLRelAnp50n k2_kdBclxLRelAnp50n n_BclxL
+,BclxL,Expression With Modifier,cRelnp50n,k1_BclxLcRelnp50n k2_kdBclxLcRelnp50n n_BclxL
+,BclxL,Expression With Modifier,RelBnp52n,k1_BclxLRelBnp52n k2_kdBclxLRelBnp52n n_BclxL
+Mcl1,,Mass Action with substrate,,k1_Mcl1deg
+Bcl2,,Mass Action with substrate,,k1_Bcl2deg
+BclxL,,Mass Action with substrate,,k1_BclxLdeg
