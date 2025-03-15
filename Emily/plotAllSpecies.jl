@@ -99,7 +99,7 @@ function plotAllSpecies(speciesToPlot,conditionsToPlot,colorArray,first_cell,las
             plot!(boxPlotAll,ylim=(0,maximum(meansOfAllConditions)+maximum(stdOfAllConditions)+0.1))
         end
         #display(plot(boxPlotAll,thisPlot))
-        display(plot(boxPlotAll,thisPlotStd,layout = grid(1, 2, widths=[0.20 ,0.6])))
+        display(plot(boxPlotAll,thisPlotStd,layout = grid(1, 2, widths=[0.30 ,0.7])))
     end
     return allConditionsArray
 end

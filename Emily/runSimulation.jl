@@ -10,7 +10,7 @@ function runSimulation(first_cell, last_cell, conditions,folder,BCRSSArray,BCRTC
     BCRIndex=findfirst(x -> x=="k3_signal-BCR", parameterNameList)
     TLRIndex=findfirst(x -> x=="k2_LPSmod-TLR", parameterNameList)
     NIKIndex=findfirst(x -> x=="nik_deg_mod-NFkB", parameterNameList)
-    thisDist=TruncatedNormal(1.0, preCV,0,Inf)
+    thisDist=Truncated(Normal(1.0, preCV),0,Inf)
 
     
 
